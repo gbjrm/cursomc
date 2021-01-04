@@ -9,6 +9,7 @@ import com.gabrielmatos.cursomc.repositories.CategoriaRepository;
 import com.gabrielmatos.cursomc.services.execeptions.DataIntegrityException;
 import com.gabrielmatos.cursomc.services.execeptions.ObjectNotFoundException;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -42,6 +43,10 @@ public class CategoriaService {
 		} catch (DataIntegrityViolationException e) {
 			throw new DataIntegrityException("Não é possível excluir uma Categoria que possui Produtos.");
 		}
+	}
+	
+	public List<Categoria> findAll(){
+		return repo.findAll();	
 	}
 	
 }
