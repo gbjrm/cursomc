@@ -31,7 +31,7 @@ public class Cliente implements Serializable {
 	private Integer tipoCliente;
 	
 	
-	//Se um cliente for apagado, os endereços dele também serão.
+	//Se um cliente for apagado, os endereços dele também serão. "cascade"
 	@OneToMany(mappedBy = "cliente", cascade=CascadeType.ALL)
 	private List<Endereco> enderecos = new ArrayList<>();
 	
